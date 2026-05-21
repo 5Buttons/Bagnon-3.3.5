@@ -462,7 +462,7 @@ end
 
 --bag info
 function ItemFrame:HasBag(bag)
-	return self:GetSettings():HasBagSlot(slot)
+	return self:GetSettings():HasBagSlot(bag)
 end
 
 function ItemFrame:GetBagSize(bag)

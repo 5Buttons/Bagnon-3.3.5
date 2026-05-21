@@ -312,7 +312,7 @@ function Frame:GetRelativePosition()
 	local s = self:GetScale()
 	if not (x and y) then return end
 
-	w = w/s h = h/s
+	w = w/s; h = h/s
 
 	local dx, dy
 	local hHalf = (x > w/2) and 'RIGHT' or 'LEFT'

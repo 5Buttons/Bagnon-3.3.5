@@ -4,10 +4,11 @@
 --]]
 
 --local Search = LibStub('ItemSearch-1.3')
+local Bagnon = LibStub('AceAddon-3.0'):GetAddon('Bagnon')
 local Sort = Bagnon:NewModule('Sorting', 'AceTimer-3.0')
 Bagnon.Sorting = Sort
 
-Sort.Proprieties = {
+Sort.Properties = {
   --'set',
   'class', 'subclass', --'equip',
   'quality',
@@ -182,7 +183,7 @@ function Sort:GetFamilies(spaces)
     tinsert(list, family)
   end
 
-  sort(list, function(a, b) return a > b end)
+  table.sort(list, function(a, b) return a > b end)
   return list
 end
 
@@ -217,7 +218,7 @@ function Sort:FitsIn(id, family)
 end
 
 function Sort.Rule(a, b)
-  for _,prop in pairs(Sort.Proprieties) do
+  for _,prop in ipairs(Sort.Properties) do
     if a[prop] ~= b[prop] then
       return a[prop] > b[prop]
     end

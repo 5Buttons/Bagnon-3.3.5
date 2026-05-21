@@ -168,7 +168,7 @@ function SavedFrameSettings:ClearDefaults()
 		removeDefaults(settings, self:GetDefaultSettings(frameID))
 		
 		if next(settings) == nil then
-			db[frameID] = nil
+			db.frames[frameID] = nil
 		end
 	end
 end
